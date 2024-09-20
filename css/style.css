@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 2000px; /* Para poder hacer scroll */
+    padding-top: 40px; /* Ajusta este valor según la altura de tu navbar */
+    font-size: 20px;
+}
+
+article {
+    padding-top: 40px; /* Ajusta este valor según la altura de tu navbar */
+}
+
+.container {
+    max-width: 1400px; /* Ajusta el ancho según lo necesites */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 20px; /* Espacio interno */
+}
+
+.navbar {
+    background-color: #007BFF; /* Azul */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    position: fixed; /* Fijo en la parte superior */
+    top: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    z-index: 1000; /* Se asegura de que esté por encima de otros elementos */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+.menu {
+    display: flex;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.menu.active {
+    max-height: 200px; /* Altura máxima para la animación */
+}
+
+@media (max-width: 600px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        background-color: #007BFF; /* Color del fondo del menú */
+        position: absolute; /* Para que el menú se superponga sobre otros elementos */
+        top: 60px; /* Ajusta este valor según la altura de tu navbar */
+        width: 100%; /* Ocupa todo el ancho */
+        border-radius: 5px; /* Bordes redondeados */
+    }
+    
+    .menu-icon {
+        display: flex;
+    }
+    
+    .menu.active {
+        display: flex;
+    }
+    
+    .navbar a {
+        padding: 10px;
+        text-align: center;
+    }
+}
